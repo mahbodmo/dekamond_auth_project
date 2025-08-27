@@ -1,8 +1,8 @@
 "use client";
 
 type MapProps = {
-  lat: number;
-  lng: number;
+  lat: string | undefined;
+  lng: string | undefined;
 };
 
 export default function GoogleMap({ lat, lng }: MapProps) {
