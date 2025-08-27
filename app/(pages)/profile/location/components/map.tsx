@@ -1,17 +1,15 @@
 "use client";
 
-import React from "react";
-
-type Props = {
-  lat: string | undefined;
-  lng: string | undefined;
+type MapProps = {
+  lat: number;
+  lng: number;
 };
 
-export default function MapIframe({ lat, lng }: Props) {
-  const src = `https://www.google.com/maps?q=${lat},${lng}&output=embed`;
+export default function GoogleMap({ lat, lng }: MapProps) {
+  const src = `https://www.google.com/maps?q=${lat},${lng}&z=14&output=embed`;
 
   return (
-    <div className="h-[350px]">
+    <div className="w-full h-[400px]">
       <iframe
         src={src}
         width="100%"
@@ -20,7 +18,7 @@ export default function MapIframe({ lat, lng }: Props) {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="rounded-2xl"
+        className="rounded-lg"
       />
     </div>
   );
